@@ -23,11 +23,6 @@
 </head>
 <body>
   <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
-    <!-- テスト用：HIROマーカー -->
-    <a-marker preset="hiro">
-      <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FF0000"></a-box>
-    </a-marker>
-
     <!-- 自作マーカー -->
     <a-marker type="pattern" url="markers/mymarker.patt">
       <a-entity gltf-model="url(assets/model.glb)" 
@@ -37,6 +32,6 @@
 
     <a-entity camera></a-entity>
   </a-scene>
-  <div class="hint">HIROマーカーで赤い箱、自作マーカーで3Dモデルが表示されます</div>
+  <div class="hint">自作マーカーで3Dモデルを表示</div>
 </body>
 </html>
