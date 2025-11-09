@@ -4,13 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AR.js Marker Example</title>
-
-  <!-- A-Frame 本体 -->
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-
-  <!-- AR.js for A-Frame (CDN) -->
   <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.min.js"></script>
-
   <style>
     body, html { margin: 0; padding: 0; overflow: hidden; }
     .hint {
@@ -27,21 +22,21 @@
   </style>
 </head>
 <body>
-  <!-- arjs="sourceType: webcam;" で端末カメラを使用 -->
   <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
-    <!-- 自作マーカーを使う -->
-    <a-marker type="pattern" url="markers/mymarker.patt">
-      <!-- Tinkercadで作成した3Dモデルを表示 -->
-      <a-entity gltf-model="url(assets/model.glb)" 
-                position="0 0 0" 
-                scale="0.5 0.5 0.5"
-                rotation="0 0 0"></a-entity>
+    <!-- テスト用：HIROマーカー -->
+    <a-marker preset="hiro">
+      <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FF0000"></a-box>
     </a-marker>
 
-    <!-- カメラ -->
+    <!-- 自作マーカー -->
+    <a-marker type="pattern" url="markers/mymarker.patt">
+      <a-entity gltf-model="url(assets/model.glb)" 
+                position="0 0 0" 
+                scale="0.5 0.5 0.5"></a-entity>
+    </a-marker>
+
     <a-entity camera></a-entity>
   </a-scene>
-
-  <div class="hint">自作マーカーをかざしてみてください</div>
+  <div class="hint">HIROマーカーで赤い箱、自作マーカーで3Dモデルが表示されます</div>
 </body>
 </html>
